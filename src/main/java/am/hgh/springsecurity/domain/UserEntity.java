@@ -1,9 +1,7 @@
 package am.hgh.springsecurity.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import am.hgh.springsecurity.security.EncriptionAlgorithm;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -20,4 +18,7 @@ public class UserEntity implements Serializable {
     private String userName;
     private String password;
     private String authority;
+
+    @Enumerated(EnumType.STRING)
+    private EncriptionAlgorithm algorithm;
 }

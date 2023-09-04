@@ -13,7 +13,7 @@ public class UserController {
 
     @GetMapping("/users")
     public String getHello(Authentication authentication) {
-        log.info("Get method {}, {}, {}", authentication.getName(), authentication.getCredentials(), authentication.getAuthorities().toArray());
+        log.info("Get method {}", authentication.getName());
         return "Hello World. \n";
     }
     @GetMapping("/valiko")

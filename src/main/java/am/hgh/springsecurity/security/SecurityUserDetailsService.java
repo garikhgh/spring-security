@@ -14,7 +14,7 @@ public class SecurityUserDetailsService implements UserDetailsService {
 
     private final UserService userService;
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public SecurityUser loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity userByUserName = userService.getUseByUserName(username);
         return new SecurityUser(userByUserName);
     }

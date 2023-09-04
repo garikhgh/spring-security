@@ -2,6 +2,7 @@ package am.hgh.springsecurity.dummy;
 
 import am.hgh.springsecurity.domain.UserEntity;
 import am.hgh.springsecurity.repository.UserRepository;
+import am.hgh.springsecurity.security.EncriptionAlgorithm;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +25,7 @@ public class FakeUser {
                     .userName("Valiko_" + id)
                     .authority("read")
                     .password(passwordEncoder.encode("valiko_" + id))
+                    .algorithm(EncriptionAlgorithm.BCRYPT)
                     .build();
             userRepository.save(d);
         });

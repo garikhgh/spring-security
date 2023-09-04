@@ -3,7 +3,6 @@ package am.hgh.springsecurity.security;
 import am.hgh.springsecurity.domain.UserEntity;
 import am.hgh.springsecurity.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

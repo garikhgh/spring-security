@@ -1,16 +1,14 @@
 package am.hgh.springsecurity.security;
 
-import ch.qos.logback.core.joran.action.NOPAction;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-@Configuration
+//@Configuration
 public class UserManagementConfig {
+
+    // this is for demonstration.
     @Bean
     public UserDetailsService userDetailsService() {
         var userDetailsService = new InMemoryUserDetailsManager();
@@ -21,10 +19,6 @@ public class UserManagementConfig {
                 .build();
         userDetailsService.createUser(user);
         return userDetailsService;
-    }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
     }
 
 }
